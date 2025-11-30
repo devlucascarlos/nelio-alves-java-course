@@ -11,7 +11,10 @@ Based on the official syllabus, I have organized my progress into logical module
 
 | Status | Module | Key Concepts Focus |
 | :---: | :--- | :--- |
-| 🟢 | **Java Core & Logic** | Variables, Control Flow, Debugging, Clean Syntax |
+| 🟢 | **Sequential Structure** | Input/Output, Variables, Scanner, Math operations, Casting |
+| 🟢 | **Conditional Structure** | If-Else logic, Switch-Case, Ternary Operator |
+| 🟡 | **Repetitive Structures** | While, For, Do-While loops, Debugging loops |
+| 🔴 | **Other Basic Topics** | Bitwise, String functions, Functions syntax |
 | 🔴 | **OOP Fundamentals** | Classes, Attributes, Methods, `static`, Constructors, Encapsulation |
 | 🔴 | **Memory & Arrays** | Stack vs. Heap, Garbage Collector, Lists, Boxing/Unboxing |
 | 🔴 | **Advanced OOP** | Inheritance, Polymorphism, Abstract Classes, Exception Handling |
@@ -31,9 +34,14 @@ Based on the official syllabus, I have organized my progress into logical module
 * **Tools:** IntelliJ IDEA, Git/GitHub, Maven, Postman
 
 ## 📂 Project Structure
-This repository will evolve to contain multiple sub-projects and exercises.
-- `/src`: Core logic and algorithm exercises.
-- `(Future Repos)`: The **Chess System** and **Spring API** will be linked here as separate detailed repositories.
+
+The source code is organized into packages corresponding to the course modules:
+
+* `src/programming_logic`: Basic syntax, variables, Scanner input, and Math operations.
+* `src/conditional`: Control flow exercises (If-Else, logical operators).
+* `src/repetitive`: Loops and iteration logic.
+
+**Note:** Major capstone projects (Chess System, Spring Boot API) will be developed in dedicated repositories and linked here upon completion.
 
 ---
 *Developed by [Lucas Carlos](https://www.linkedin.com/in/devlucascarlos) - Software Engineering Student.*
