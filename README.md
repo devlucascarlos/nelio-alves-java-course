@@ -13,9 +13,9 @@ Based on the official syllabus, I have organized my progress into logical module
 | :---: | :--- | :--- |
 | 🟢 | **Sequential Structure** | Input/Output, Variables, Scanner, Math operations, Casting |
 | 🟢 | **Conditional Structure** | If-Else logic, Switch-Case, Ternary Operator |
-| 🟡 | **Repetitive Structures** | While, For, Do-While loops, Debugging loops |
-| 🔴 | **Other Basic Topics** | Bitwise, String functions, Functions syntax |
-| 🔴 | **OOP Fundamentals** | Classes, Attributes, Methods, `static`, Constructors, Encapsulation |
+| 🟢 | **Repetitive Structures** | While, For, Do-While loops, Debugging loops |
+| 🟢 | **Other Basic Topics** | Bitwise, String functions, Functions syntax |
+| 🟡 | **OOP Fundamentals** | Classes, Attributes, Methods, `static`, Constructors, Encapsulation |
 | 🔴 | **Memory & Arrays** | Stack vs. Heap, Garbage Collector, Lists, Boxing/Unboxing |
 | 🔴 | **Advanced OOP** | Inheritance, Polymorphism, Abstract Classes, Exception Handling |
 | 🔴 | **♟️ PROJECT: Chess System** | Complex Logic, Matrix manipulation, Layered Architecture |
