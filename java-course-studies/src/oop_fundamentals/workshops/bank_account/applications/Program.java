@@ -11,88 +11,84 @@ public class Program {
 
         Account account;
 
+        double initialDeposit = 0.0;
+        double depositValue = 0.0;
+        double withdrawalValue = 0.0;
+
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println();
-        System.out.println("Warning: Withdrawal tax $ 5.00");
-        System.out.println();
+        System.out.println("\nWarning: Withdrawal tax $ 5.00\n");
         System.out.println("Please, enter your data to create an account!");
-        System.out.println();
 
-        System.out.print("Enter the account number: ");
+        System.out.print("\nEnter the account number: ");
         int number = sc.nextInt();
         sc.nextLine();
         System.out.print("Enter the account holder: ");
         String name = sc.nextLine();
-        System.out.print("Is there an initial deposit (y/n)? ");
-        char responseOne = sc.next().charAt(0);
-
-        while (responseOne != 'y' && responseOne != 'n') {
-            System.out.println();
-            System.out.println("- Invalid input! Please try again.");
-            System.out.println();
-            System.out.print("Is there an initial deposit? (y/n) ");
-            responseOne = sc.next().charAt(0);
-        }
+        char responseOne = validateInput(sc, "Is there an initial deposit (y/n)? ");
 
         if (responseOne == 'y') {
-            System.out.print("Enter initial deposit value: ");
-            double initialDeposit = sc.nextDouble();
+            System.out.print("Enter initial deposit value: $ ");
+            initialDeposit = sc.nextDouble();
             account = new Account(name, number, initialDeposit);
         } else {
             account = new Account(name, number);
         }
 
-        System.out.println();
-        System.out.println("Account data:");
-        System.out.println();
-        System.out.println(account);
+        System.out.println("\nAccount data:\n" + account);
 
-        System.out.println();
-        System.out.print("Would you like to make a deposit? (y/n) ");
-        char responseTwo = sc.next().charAt(0);
-
-        while (responseTwo != 'y' && responseTwo != 'n') {
-            System.out.println();
-            System.out.println("- Invalid input! Please try again.");
-            System.out.println();
-            System.out.print("Would you like to make a deposit? (y/n) ");
-            responseTwo = sc.next().charAt(0);
-        }
+        System.out.println("\n-------------------\n");
+        char responseTwo = validateInput(sc, "Would you like to make a deposit? (y/n) ");
 
         if (responseTwo == 'y') {
-            System.out.print("Enter deposit value: ");
-            double depositValue = sc.nextDouble();
+            System.out.print("Enter deposit value: $ ");
+            depositValue = sc.nextDouble();
             account.deposit(depositValue);
-
-            System.out.println();
-            System.out.println("Account data:");
-            System.out.println();
-            System.out.println(account);
         }
 
-        System.out.print("Would you like to make a withdrawal? (y/n) ");
-        char responseThree = sc.next().charAt(0);
+        System.out.println("\nAccount data:\n" + account);
 
-        while (responseThree != 'y' && responseThree != 'n') {
-            System.out.println();
-            System.out.println("- Invalid input! Please try again.");
-            System.out.println();
-            System.out.print("Would you like to make a withdrawal? (y/n) ");
-            responseThree = sc.next().charAt(0);
-        }
+        System.out.println("\n-------------------\n");
+        char responseThree = validateInput(sc, "Would you like to make a withdrawal? (y/n) ");
 
         if (responseThree == 'y') {
-            System.out.print("Enter withdrawal value: ");
-            double withdrawalValue = sc.nextDouble();
+            System.out.print("Enter withdrawal value: $ ");
+            withdrawalValue = sc.nextDouble();
             account.withdraw(withdrawalValue);
-
-            System.out.println();
-            System.out.println("Account data:");
-            System.out.println();
-            System.out.println(account);
             }
+
+        System.out.println("\nAccount data:\n" + account);
+
+        System.out.println("\n-------------------\n");
+        char responseFour = validateInput(sc, "Would you like to print a bank statement? (y/n) ");
+
+        if (responseFour == 'y') {
+
+            System.out.println("\nStatement:\n");
+            if (initialDeposit > 0) System.out.printf("Initial Dep -- $ %.2f%n", initialDeposit);
+            if (depositValue > 0)   System.out.printf("Deposit ------ $ %.2f%n", depositValue);
+
+            if (withdrawalValue > 0) {
+                System.out.printf("Withdrawal --- $ -%.2f%n", withdrawalValue);
+                System.out.println("Tax ---------- $ -5.00 ");
+            }
+        }
+
+        System.out.println("\nAccount data:\n" + account);
+
+        sc.close();
+        }
+        public static char validateInput(Scanner sc, String question) {
+            System.out.print(question);
+            char response = sc.next().charAt(0);
+
+            while (response != 'y' && response != 'n') {
+                System.out.println("\n- Invalid input! Please try again.\n");
+                System.out.print(question);
+                response = sc.next().charAt(0);
+            }
+            return response;
         }
 
     }
